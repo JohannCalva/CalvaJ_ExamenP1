@@ -1,4 +1,8 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<CalvaJ_ExamenP1DBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("CalvaJ_ExamenP1DBContext") ?? throw new InvalidOperationException("Connection string 'CalvaJ_ExamenP1DBContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
