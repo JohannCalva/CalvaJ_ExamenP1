@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CalvaJ_ExamenP1.Models
 {
@@ -19,6 +20,7 @@ namespace CalvaJ_ExamenP1.Models
         [Phone]
         public string Telefono { get; set; }
         [Required]
+        [Column(TypeName = "decimal(18,2)")]
         public decimal IngresoMensual { get; set; }
         [Required]
         public bool EsMayorEdad { get; set; }
