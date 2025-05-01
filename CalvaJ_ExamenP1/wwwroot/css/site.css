@@ -20,3 +20,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#imgGato {
+    width: 700px;
+    height: 700px;
+}

@@ -47,7 +47,7 @@ namespace CalvaJ_ExamenP1.Controllers
         // GET: Mascotas/Create
         public IActionResult Create()
         {
-            ViewData["IdPropietario"] = new SelectList(_context.Propietario, "Id", "Correo");
+            ViewData["IdPropietario"] = new SelectList(_context.Propietario, "Id", "Nombre");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace CalvaJ_ExamenP1.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdPropietario"] = new SelectList(_context.Propietario, "Id", "Correo", mascota.IdPropietario);
+            ViewData["IdPropietario"] = new SelectList(_context.Propietario, "Id", "Nombre", mascota.IdPropietario);
             return View(mascota);
         }
 
@@ -81,7 +81,7 @@ namespace CalvaJ_ExamenP1.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdPropietario"] = new SelectList(_context.Propietario, "Id", "Correo", mascota.IdPropietario);
+            ViewData["IdPropietario"] = new SelectList(_context.Propietario, "Id", "Nombre", mascota.IdPropietario);
             return View(mascota);
         }
 
@@ -117,7 +117,7 @@ namespace CalvaJ_ExamenP1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdPropietario"] = new SelectList(_context.Propietario, "Id", "Correo", mascota.IdPropietario);
+            ViewData["IdPropietario"] = new SelectList(_context.Propietario, "Id", "Nombre", mascota.IdPropietario);
             return View(mascota);
         }
 
